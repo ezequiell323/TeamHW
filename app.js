@@ -21,7 +21,20 @@ function menu() {
     inquirer.prompt(question.addEmployee).then(function (data) {
         switch(data.choices){
             case "Engineer":
-                console.log("test")
+                inquirer.prompt(question.engineer).then(function (data) {
+                    menu()
+                })   
+                break;
+            case "Intern":
+                inquirer.prompt(question.intern).then(function (data) {
+                    menu()
+                })
+                break;
+            case "Done":
+                console.log("test3")
+                break;
+                
+            
         }
     })
 }
